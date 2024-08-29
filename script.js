@@ -10,3 +10,16 @@ function getComputerChoice () {
     }
 }
 
+function getHumanChoice () {
+    let y = prompt("Pick: Rock, Paper or Scissors");
+
+    if (y === "rock") {
+        return "Rock";
+    } else if (y === "paper") {
+        return "Paper";
+    } else if (y === "scissors") {
+        return "Scissors";
+    } else {
+        return "Incorrect, please pick Rock, Paper or Scissors"
+    }
+}
