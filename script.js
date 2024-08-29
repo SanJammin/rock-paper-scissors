@@ -13,7 +13,7 @@ function getComputerChoice () {
 
 // Human Choice Code - Currently has to have exact values to match
 function getHumanChoice () {
-    let y = prompt("Pick: Rock, Paper or Scissors");
+    let y = prompt("Pick: Rock, Paper or Scissors").toLowerCase();
 
     if (y === "rock") {
         return "Rock";
