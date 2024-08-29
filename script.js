@@ -1,3 +1,4 @@
+// Computer Choice Code
 function getComputerChoice () {
     let x = Math.floor(Math.random() * 100) + 1;
 
@@ -10,6 +11,7 @@ function getComputerChoice () {
     }
 }
 
+// Human Choice Code - Currently has to have exact values to match
 function getHumanChoice () {
     let y = prompt("Pick: Rock, Paper or Scissors");
 
@@ -23,3 +25,7 @@ function getHumanChoice () {
         return "Incorrect, please pick Rock, Paper or Scissors"
     }
 }
+
+// Score Variables
+let humanScore = 0;
+let computerScore = 0;
