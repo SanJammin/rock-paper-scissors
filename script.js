@@ -11,7 +11,7 @@ function getComputerChoice () {
     }
 }
 
-// Human Choice Code - Currently has to have exact values to match
+// Human Choice Code
 function getHumanChoice () {
     let y = prompt("Pick: Rock, Paper or Scissors").toLowerCase();
 
@@ -29,3 +29,11 @@ function getHumanChoice () {
 // Score Variables
 let humanScore = 0;
 let computerScore = 0;
+
+//Play Round Code
+function playRound (humanChoice, computerChoice) {
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice ();
