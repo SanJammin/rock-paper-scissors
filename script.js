@@ -55,5 +55,6 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
+//Selection Variables
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice ();
