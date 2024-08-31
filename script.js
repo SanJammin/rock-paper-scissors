@@ -26,11 +26,21 @@ function getHumanChoice () {
     }
 }
 
+//Selection Variables
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice ();
+
 // Score Variables
 let humanScore = 0;
 let computerScore = 0;
 
-//Play Round Code
+// Round Counter
+let roundCounter = 1;
+if (humanScore + 1 || computerScore + 1) {
+    roundCounter += 1;
+}
+
+// Play Round Code
 function playRound (humanChoice, computerChoice) {
     if (humanChoice === "Rock" && computerChoice === "Scissors") {
         humanScore += 1
@@ -55,6 +65,8 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-//Selection Variables
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice ();
+
+// Play Game Code
+function playGame() {
+}
+
