@@ -11,37 +11,11 @@ function getComputerChoice () {
     }
 }
 
-// Human Choice Code
-function getHumanChoice () {
-    let y = prompt("Pick: Rock, Paper or Scissors").toLowerCase();
-
-    if (y === "rock") {
-        return "Rock";
-    } else if (y === "paper") {
-        return "Paper";
-    } else if (y === "scissors") {
-        return "Scissors";
-    } else {
-        return "Incorrect, please pick Rock, Paper or Scissors"
-    }
-}
-
-//Selection Variables
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice ();
-
-// Score Variables
-let humanScore = 0;
-let computerScore = 0;
-
-// Round Counter
-let roundCounter = 1;
-if (humanScore + 1 || computerScore + 1) {
-    roundCounter += 1;
-}
 
 // Play Round Code
 function playRound (humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+
     if (humanChoice === computerChoice) {
         return "Draw!";
     } else if (
@@ -58,5 +32,41 @@ function playRound (humanChoice, computerChoice) {
 
 // Play Game Code
 function playGame() {
+    // Score Variables
+    let humanScore = 0;
+    let computerScore = 0;
+
+    // Round Counter
+    let roundCounter = 1;
+    if (humanScore + 1 || computerScore + 1) {
+        roundCounter += 1;
+    }
+
+    
+    // Loop
+    for (let i = 0; i < 5; i ++){
+        // Play Round
+        console.log("Round: " + roundCounter);
+        const humanChoice = prompt("Choose Rock, Paper or Scissors");
+        const computerChoice = getComputerChoice();
+        const result = playRound(humanChoice, computerChoice);
+        console.log(result)
+
+        if (result.includes("Win!")) {
+            humanScore++;
+        } else if (result.includes("Lose!")) {
+            computerScore++;
+        }
+    }
+
+    if (humanScore > computerScore) {
+        console.log("Congratulations, You Win! " + humanScore + ":" + computerScore);
+    } else if (humanScore < computerScore) {
+        console.log("You Lose! Better Luck Next Time " + humanScore + ":" + computerScore);
+    } else {
+        console.log("It's A Draw! " + humanScore + ":" + computerScore)
+    }
 }
+
+playGame();
 
