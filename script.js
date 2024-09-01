@@ -3,11 +3,11 @@ function getComputerChoice () {
     let x = Math.floor(Math.random() * 100) + 1;
 
     if (x < 33) {
-        return "Rock";
+        return "rock";
     } else if (x >= 33 && x < 66) {
-        return "Paper";
+        return "paper";
     } else {
-        return "Scissors";
+        return "scissors";
     }
 }
 
@@ -19,9 +19,9 @@ function playRound (humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         return "Draw!";
     } else if (
-    (humanChoice === "Rock" && computerChoice === "Scissors") || 
-    (humanChoice === "Paper" && computerChoice === "Rock") || 
-    (humanChoice === "Scissors" && computerChoice === "Paper")
+    (humanChoice === "rock" && computerChoice === "scissors") || 
+    (humanChoice === "paper" && computerChoice === "rock") || 
+    (humanChoice === "scissors" && computerChoice === "paper")
     ) {
         return "You Win! " + humanChoice + " beats " + computerChoice;
     } else {
@@ -38,16 +38,12 @@ function playGame() {
 
     // Round Counter
     let roundCounter = 1;
-    if (humanScore + 1 || computerScore + 1) {
-        roundCounter += 1;
-    }
-
-    
+        
     // Loop
     for (let i = 0; i < 5; i ++){
         // Play Round
         console.log("Round: " + roundCounter);
-        const humanChoice = prompt("Choose Rock, Paper or Scissors");
+        const humanChoice = prompt("Choose rock, paper or scissors");
         const computerChoice = getComputerChoice();
         const result = playRound(humanChoice, computerChoice);
         console.log(result)
@@ -57,6 +53,7 @@ function playGame() {
         } else if (result.includes("Lose!")) {
             computerScore++;
         }
+        roundCounter ++;
     }
 
     if (humanScore > computerScore) {
