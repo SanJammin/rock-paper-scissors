@@ -42,26 +42,16 @@ if (humanScore + 1 || computerScore + 1) {
 
 // Play Round Code
 function playRound (humanChoice, computerChoice) {
-    if (humanChoice === "Rock" && computerChoice === "Scissors") {
-        humanScore += 1
-        return "You Win: Rock beats Scissors"
-    } else if (humanChoice === "Paper" && computerChoice === "Rock") {
-        humanScore += 1
-        return "You Win: Paper beats Rock"
-    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-        humanScore += 1
-        return "You Win: Scissors beats Paper"
-    } else if (humanChoice === computerChoice) {
-        return "Draw"
-    } else if (humanChoice === "Rock" && computerChoice === "Paper") {
-        computerScore += 1
-        return "You Lose: Paper beats Rock"
-    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
-        computerScore += 1
-        return "You Lose: Scissors beats Paper"
-    } else if (humanChoice === "Scissors" && computerChoice === "Rock") {
-        computerScore += 1
-        return "You Lose: Rock beats Scissors"
+    if (humanChoice === computerChoice) {
+        return "Draw!";
+    } else if (
+    (humanChoice === "Rock" && computerChoice === "Scissors") || 
+    (humanChoice === "Paper" && computerChoice === "Rock") || 
+    (humanChoice === "Scissors" && computerChoice === "Paper")
+    ) {
+        return "You Win! " + humanChoice + " beats " + computerChoice;
+    } else {
+        return "You Lose! " + computerChoice + " beats " + humanChoice;
     }
 }
 
